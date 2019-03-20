@@ -5,17 +5,17 @@ tags:
 ---
 HTTP(HyperText Transfer Protocol,超文本传输协议)是一种用于分布式、协作试和超媒体信息系统的应用层协议，可以看作是是从服务器传输数据到客户端的传输协议。HTTP是万维网的数据通信的基础。
 
-**#客户端和服务器端交互的过程**
+## 客户端和服务器端交互的过程
 1.浏览器负责发起请求
 2.服务器在 80 端口接收请求
 3.服务器负责返回内容（响应）
 4.浏览器负责下载响应内容
 
-**#请求消息结构**
+## 请求消息结构
 
-请求示例
+### 请求示例
 
-curl -X POST -d "12345678" -s -v -H "Mrlee: HELLO" -- "https://www.baidu.com"
+    curl -X POST -d "12345678" -s -v -H "Mrlee: HELLO" -- "https://www.baidu.com"
 ![请求示例](HTTP的介绍/请求示例.png)
 
 请求的内容为
@@ -30,7 +30,7 @@ Content-Type: application/x-www-form-urlencoded
 
 1234567890
 
-**请求的格式**
+### 请求的格式
 
 1 动词 路径 协议/版本
 2 Key1: value1
@@ -49,7 +49,7 @@ Content-Type: application/x-www-form-urlencoded
 如果你没有写路径，那么路径默认为 /。
 第 2 部分中的 Content-Type 标注了第 4 部分的格式。
 
-**用Chrome看请求内容**
+### 用Chrome看请求内容
 
 1.打开 Network，
 2.地址栏输入网址，
@@ -60,11 +60,11 @@ Content-Type: application/x-www-form-urlencoded
 
 ![用Chrome看请求示例](HTTP的介绍/看请求.png)
 
-**#响应结构**
+## 响应结构
 
 请求了之后，应该都能得到一个响应。
 
-响应示例
+### 响应示例
 
 刷新百度首页得到的响应。
 
@@ -82,7 +82,7 @@ Content-Type: text/html;charset=utf-8
 ......
 以下省略
 
-**响应的格式**
+### 响应的格式
 
 1 协议/版本号 状态码 状态解释
 2 Key1: value1
@@ -101,7 +101,7 @@ Content-Type: text/html;charset=utf-8
 第 2 部分中的 Content-Type 标注了第 4 部分的格式。
 第 2 部分中的 Content-Type 遵循 MIME 规范。
 
-**用 Chrome 查看响应**
+### 用 Chrome 查看响应
 
 1.打开 Network，
 2.输入网址，
@@ -113,25 +113,25 @@ Content-Type: text/html;charset=utf-8
 
 ![用Chrome看响应示例](HTTP的介绍/看响应.png)
 
-**#curl 命令的使用**
+## curl 命令的使用
 
 curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。
 
-语法：# curl [option] [url]
+语法：`curl [option] [url]`
 常见参数：
--A/--user-agent <string>              设置用户代理发送给服务器
--b/--cookie <name=string/file>    cookie字符串或文件读取位置
--c/--cookie-jar <file>                    操作结束后把cookie写入到这个文件中
--C/--continue-at <offset>            断点续转
--D/--dump-header <file>            把header信息写入到该文件中
--e/--referer                                  来源网址
--f/--fail                                          连接失败时不显示http错误
--o/--output                                  把输出写到该文件中
--O/--remote-name                      把输出写到该文件中，保留远程文件的文件名
--r/--range <range>                      检索来自HTTP/1.1或FTP服务器字节范围
--s/--silent                            静音模式。不输出任何东西
+`-A/--user-agent <string`             设置用户代理发送给服务器
+`-b/--cookie <name=string/file`    cookie字符串或文件读取位置
+`-c/--cookie-jar <file`                   操作结束后把cookie写入到这个文件中
+`-C/--continue-at <offset`           断点续转
+`-D/--dump-header <file`            把header信息写入到该文件中
+`-e/--referer`                                  来源网址
+`-f/--fail`                                          连接失败时不显示http错误
+`-o/--output`                                  把输出写到该文件中
+`-O/--remote-name`                      把输出写到该文件中，保留远程文件的文件名
+`-r/--range <range`                      检索来自HTTP/1.1或FTP服务器字节范围
+`-s/--silent`                            静音模式。不输出任何东西
 如：
-curl -s -v -H "mrlee: hello" -- "https://www.baidu.com"
+    curl -s -v -H "mrlee: hello" -- "https://www.baidu.com"
 
 请求的内容为
 
@@ -141,7 +141,8 @@ User-Agent: curl/7.54.0
 Accept: */*
 mrlee: hello
 
-curl -X POST -d "12345678" -s -v -H "mrlee: hello" -- "https://www.baidu.com"
+    curl -X POST -d "12345678" -s -v -H "mrlee: hello" -- "https://www.baidu.com"
+
 请求的内容为
 
 POST / HTTP/1.1
