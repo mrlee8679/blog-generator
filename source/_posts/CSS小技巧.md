@@ -72,7 +72,7 @@ tags:
 text-align:center 是用于设置div块中的内容（a标签）居于整个div宽度的中间。
 ```
 
-### 内联元素水平居中
+### 块级元素水平居中
 
 可以像内联元素一样用 text-align:center 进行水平居中，只要给该块级元素加上 display: inline ，让它内联显示即可；如：
 
