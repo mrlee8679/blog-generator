@@ -39,8 +39,8 @@ undefined + '' // "undefined"
 1、使用 Number('1') === 1；
 2、使用 parseInt('1',10) === 1 ,用这种方法时最好记得把后面的 10 写上，这个 10 代表十进制。若写成 parseInt('011') 得到数字会是11，而不是八进制下的9，要使用八进制必须在后面加上8 如 parseInt('011',8) === 9 。当写 parseInt('a') 时得到的是NaN。
 3、使用 parseFloat('1.23') === 1.23 , 表示浮点数；
-4、'1' - 0 === 1;
-5、+ '1' === 1 或者 - '1' === -1
+4、'1'-0 === 1;
+5、+'1' === 1 或者 -'1' === -1
 
 ## Boolean
 
@@ -68,10 +68,10 @@ undefined + '' // "undefined"
 
 数据区的分为 Stack 栈内存与 Heap 堆内存。一般类型的数据就存放在 Stack 内存，有 Number 、 String 、 Symbol 、 Boolean 、 Null 和 Undefined 
 
-![基本类型的存储](/C:/Users/86793/Desktop/blog/source/_posts/JS的数据类型转换/基本类型.png)
+![基本类型的存储](/JS的数据类型转换/基本类型.png)
 
 而 Object 类型的存储有点不一样，var b = {name:'son'} 他会把内容 (name:'son') 存在 Heap 堆内存里，并会生成一个地址，然后在 b 的对应的 Stack 栈内存里存的就是那个地址，可以说是 b 引用了这个对象。
 
-![基本类型的存储](/C:/Users/86793/Desktop/blog/source/_posts/JS的数据类型转换/对象.png)
+![基本类型的存储](/JS的数据类型转换/对象.png)
 
 当一个对象没有被引用时，那这个对象就是垃圾，会被浏览器回收。
