@@ -21,7 +21,7 @@ window.jQuery = function(nodeOrSelector){
       length : 1
     }
   }
-  node.addClass = function(classes){
+  nodes.addClass = function(classes){
     classes.forEach( (value) => {
       for ( let i = 0; i < nodes.length; i++ ){
         node[i].classList.add(value)
@@ -36,7 +36,7 @@ window.jQuery = function(nodeOrSelector){
       }
       return texts
     }else{
-      for ( let i=0; i < nodes.length; i++ ){
+      for (let i=0; i < nodes.length; i++){
         nodes[i].textContent = text
       }
     }
